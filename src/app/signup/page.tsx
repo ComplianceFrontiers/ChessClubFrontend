@@ -87,9 +87,7 @@ const Signup = () => {
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="(000) 000-0000"
-                pattern="^\(\d{3}\) \d{3}-\d{4}$"
-                title="Please enter a valid phone number."
+                placeholder="Phone Number"
                 value={formValues.phone}
                 onChange={handleInputChange}
               />
