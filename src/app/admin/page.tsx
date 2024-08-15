@@ -7,6 +7,7 @@ interface User {
   parentName: string;
   kidName: string;
   schoolName: string;
+  gradename:string;
   email: string;
   phone: string;
   last_signin: string;
@@ -27,6 +28,7 @@ const Admin: React.FC = () => {
           parentName: user.parentName,
           kidName: user.kidName,
           schoolName: user.schoolName,
+          gradename:user.gradename,
           email: user.email,
           phone: user.phone,
           last_signin:user.last_signin
@@ -60,6 +62,7 @@ const Admin: React.FC = () => {
             <th>Parent Name</th>
             <th>Kid Name</th>
             <th>School Name</th>
+            <th>School Grade</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Last_signin</th>
@@ -72,6 +75,7 @@ const Admin: React.FC = () => {
               <td>{user.parentName}</td>
               <td>{user.kidName}</td>
               <td>{user.schoolName}</td>
+              <td>{user.gradename}</td>
               <td>{user.email}</td>
               <td>{user.phone}</td>
               <td>{user.last_signin}</td>

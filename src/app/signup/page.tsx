@@ -7,13 +7,17 @@ const Signup = () => {
     parentName: '',
     kidName1: '',
     schoolName1: '',
+    schoolgrade1: ' ',
     kidName2: '',
     schoolName2: '',
+    schoolgrade2: ' ',
     kidName3: '',
     schoolName3: '',
+    schoolgrade3: ' ',
     email: '',
     phone: ''
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -38,6 +42,7 @@ const Signup = () => {
         },
         body: JSON.stringify(formValues)
       });
+      console.log(formValues)
 
       if (response.ok) {
         const contentType = response.headers.get('content-type');
@@ -70,7 +75,7 @@ const Signup = () => {
         <div className="form-group">
           <div className="input-row">
             <div className="input-column">
-              <label htmlFor="parentName">Parent Name</label>
+              <label htmlFor="parentName">Name</label>
               <input
                 type="text"
                 id="parentName"
@@ -117,7 +122,6 @@ const Signup = () => {
                 placeholder="Kid-1 Name"
                 value={formValues.kidName1}
                 onChange={handleInputChange}
-                required
               />
             </div>
             <div className="input-column">
@@ -129,11 +133,21 @@ const Signup = () => {
                 placeholder="Kid-1 School Name"
                 value={formValues.schoolName1}
                 onChange={handleInputChange}
-                required
+              />
+              <label htmlFor="schoolgrade1">Kid-1 Grade</label>
+              <input
+                type="text"
+                id="schoolgrade1"
+                name="schoolgrade1"
+                placeholder="Kid-1 School grade"
+                value={formValues.schoolgrade1}
+                onChange={handleInputChange}
               />
             </div>
           </div>
         </div>
+
+        {/* Kid 2 Details */}
         <div className="form-group">
           <div className="input-row">
             <div className="input-column">
@@ -157,9 +171,20 @@ const Signup = () => {
                 value={formValues.schoolName2}
                 onChange={handleInputChange}
               />
+              <label htmlFor="schoolgrade2">Kid-2 Grade</label>
+              <input
+                type="text"
+                id="schoolgrade2"
+                name="schoolgrade2"
+                placeholder="Kid-2 School grade"
+                value={formValues.schoolgrade2}
+                onChange={handleInputChange}
+              />
             </div>
           </div>
         </div>
+
+        {/* Kid 3 Details */}
         <div className="form-group">
           <div className="input-row">
             <div className="input-column">
@@ -183,9 +208,19 @@ const Signup = () => {
                 value={formValues.schoolName3}
                 onChange={handleInputChange}
               />
+              <label htmlFor="schoolgrade3">Kid-3 Grade</label>
+              <input
+                type="text"
+                id="schoolgrade3"
+                name="schoolgrade3"
+                placeholder="Kid-3 School grade"
+                value={formValues.schoolgrade3}
+                onChange={handleInputChange}
+              />
             </div>
           </div>
         </div>
+
         <div className="form-actions">
           <button type="submit" className="submit-button" disabled={isSubmitting}>
             {isSubmitting ? <img src="/images/loading.gif" alt="Loading" /> : 'Submit'}

@@ -63,8 +63,7 @@ h2 {
 
       // Add * for required fields
       &[for="parentName"],
-      &[for="email"] ,
-      &[for="kidName1"] {
+      &[for="email"] {
         &::after {
           display: inline;
         }
